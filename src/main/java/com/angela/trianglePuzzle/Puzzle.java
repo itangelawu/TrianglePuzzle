@@ -23,20 +23,8 @@ public class Puzzle {
 
         findMaxRecursive(n, path, paths, 0);
 
-        int max = 0;
-        List<Integer> result=null;
-        for(List<Integer> p :paths){
-            int sum = 0;
-            for(Integer i:p)
-                sum+=i;
-            if(sum>max){
-                max=sum;
-                result=p;
-            }
-        }
 
-
-        return result;
+        return paths.get(0);
     }
 
     public void findMaxRecursive(Node n, int[] path, List<List<Integer>> paths, int pathLen) {
@@ -63,8 +51,8 @@ public class Puzzle {
     public void addPath(int[] path, List<List<Integer>> paths, int pathLen){
 
         int i;
-        int cSum = 0;
-        int pSum = 0;
+        long cSum = 0;
+        long pSum = 0;
 
         List<Integer> l = new ArrayList<Integer>();
 
@@ -73,6 +61,7 @@ public class Puzzle {
             cSum+=path[i];
         }
 
+        //always put largest series in the collection
         if(paths.size()>0){
             for(int j = 0; j < paths.get(0).size(); j++)
                 pSum+= (paths.get(0)).get(j);

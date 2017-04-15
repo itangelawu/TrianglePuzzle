@@ -41,7 +41,7 @@ public class TrianglePuzzle {
 
         List<Integer> path = puzzle.findMax(n);
 
-        int sum = 0;
+        long sum = 0;
         for(Integer i:path){
             if(sum==0) {
                 System.out.print(i);
