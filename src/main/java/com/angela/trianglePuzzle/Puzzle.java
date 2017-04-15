@@ -1,5 +1,7 @@
 package com.angela.trianglePuzzle;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -61,10 +63,25 @@ public class Puzzle {
     public void addPath(int[] path, List<List<Integer>> paths, int pathLen){
 
         int i;
+        int cSum = 0;
+        int pSum = 0;
+
         List<Integer> l = new ArrayList<Integer>();
-        for (i = 0; i < pathLen; i++)
+
+        for (i = 0; i < pathLen; i++){
             l.add(path[i]);
-        paths.add(l);
+            cSum+=path[i];
+        }
+
+        if(paths.size()>0){
+            for(int j = 0; j < paths.get(0).size(); j++)
+                pSum+= (paths.get(0)).get(j);
+            if(cSum>pSum) {
+                paths.set(0, l);
+                return;
+            }
+        }else
+            paths.add(l);
 
     }
 
