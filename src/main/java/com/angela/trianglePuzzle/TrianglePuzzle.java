@@ -1,12 +1,10 @@
 package com.angela.trianglePuzzle;
 
-import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -18,13 +16,13 @@ public class TrianglePuzzle {
     public static void main(String args[]) {
 
         String fileName = null;
-        //if (0 < args.length) {
-            //fileName = args[0];
-            fileName = "C:\\workspace\\Triangle\\src\\main\\resources\\triangle_test_100rows.txt";
-        //} else {
-      //      System.err.println("Invalid arguments count:" + args.length);
-      //      return;
-      //  }
+        if (0 < args.length) {
+            fileName = args[0];
+
+        } else {
+            System.err.println("Invalid arguments count:" + args.length);
+            return;
+        }
 
         List<String> list = new ArrayList<>();
 
@@ -49,8 +47,10 @@ public class TrianglePuzzle {
                 System.out.print(i);
                 sum+=i;
             }
-            else
-                System.out.print("+"+i);
+            else {
+                System.out.print("+" + i);
+                sum+=i;
+            }
         }
 
         System.out.println("="+sum);
