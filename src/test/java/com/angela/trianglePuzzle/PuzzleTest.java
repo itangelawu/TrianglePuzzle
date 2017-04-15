@@ -17,7 +17,7 @@ class PuzzleTest {
     @BeforeEach
     void setUp() {
 
-        PuzzleLoader loader = new PuzzleLoader("triangle_test_4rows");
+        PuzzleLoader loader = new PuzzleLoader("triangle_test_4rows.txt");
         n = loader.loadPuzzle();
 
     }

@@ -23,7 +23,7 @@ public class PuzzleLoader {
         //Get file from resources folder
         //Get file from resources folder
         ClassLoader classLoader = getClass().getClassLoader();
-        File file = new File(classLoader.getResource("triangle_test_100rows.txt").getFile());
+        File file = new File(classLoader.getResource(fileName).getFile());
 
 
         try (Scanner scanner = new Scanner(file)) {
